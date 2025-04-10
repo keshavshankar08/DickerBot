@@ -65,11 +65,11 @@ bot.set_control_data(wheel, speed, direction)
 bot.disconnect()
 ```
 
-# Example Teleop
+## Example Teleop
 ```python
 # TODO: Create a program to do keyboard basic teleop using w,a,s,d while showing realtime video stream and IMU/proximity data.
 ```
 
-# DickerBot Project
+## DickerBot Project
 
 You can find information about the DickerBot on the [GitHub page](https://github.com/keshavshankar08/DickerBot/tree/main).
