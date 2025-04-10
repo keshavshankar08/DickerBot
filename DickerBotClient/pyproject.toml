@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dickerbotclient"
+version = "1.0.0"
+description = "Python client library for communicating with DickerBot robots."
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Keshav Shankar", email = "keshavshankar08@gmail.com" }
+]
+dependencies = [
+    "websockets",
+    "numpy"
+]
+requires-python = ">=3.7"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["dickerbotclient"] 
+
+[project.urls]
+Homepage = "https://github.com/keshavshankar08/DickerBot/tree/main/DickerBotClient"
+Issues = "https://github.com/keshavshankar08/DickerBot/issues"

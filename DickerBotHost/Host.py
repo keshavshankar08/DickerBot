@@ -10,7 +10,7 @@ import threading
 class DickerBotHost(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("Manager.ui", self)
+        uic.loadUi("Host.ui", self)
         
         self.device_manager_refresh_button.clicked.connect(self.refresh_clicked) # refresh button bind
         self.device_manager_sync_button.clicked.connect(self.sync_clicked) # sync button bind
@@ -23,6 +23,19 @@ class DickerBotHost(QtWidgets.QMainWindow):
         self.robot_mac_address = ""
         self.ip_address = ""
         self.port = "8765"
+
+
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        self.ip_address = s.getsockname()[0]
+        s.close()
+
+        self.device_manager_ssid_data.clear()
+        self.device_manager_password_data.clear()
+        self.socket_information_ip_address_data.clear()
+        self.socket_information_port_data.clear()
+        self.socket_information_ip_address_data.setText(self.ip_address)
+        self.socket_information_port_data.setText(self.port)
 
         # websocket objects
         self.server = None
@@ -48,17 +61,6 @@ class DickerBotHost(QtWidgets.QMainWindow):
         device_port = self.device_manager_port_drop_down.currentText()
         wifi_ssid = self.device_manager_ssid_data.text()
         wifi_password = self.device_manager_password_data.text()
-        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.connect(("8.8.8.8", 80))
-        self.ip_address = s.getsockname()[0]
-        s.close()
-
-        self.device_manager_ssid_data.clear()
-        self.device_manager_password_data.clear()
-        self.socket_information_ip_address_data.clear()
-        self.socket_information_port_data.clear()
-        self.socket_information_ip_address_data.setText(self.ip_address)
-        self.socket_information_port_data.setText(self.port)
 
         ser = None
         try:
