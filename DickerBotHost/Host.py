@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets, uic
+import PyQt5
 import sys
 import serial
 import serial.tools.list_ports
@@ -6,6 +7,9 @@ import websockets
 import socket
 import asyncio
 import threading
+import os
+
+os.environ["QT_PLUGIN_PATH"] = os.path.join(os.path.dirname(PyQt5.__file__), "Qt", "plugins")
 
 class DickerBotHost(QtWidgets.QMainWindow):
     def __init__(self):
