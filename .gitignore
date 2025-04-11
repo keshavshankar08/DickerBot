@@ -6,3 +6,4 @@ dist/
 *.egg-info/
 build/
 dmg_staging/
+DickerBotHost.dmg
