@@ -3,11 +3,11 @@
 
 <img src="./images/DickerBotLogo.png" alt="DickerBot Logo" width="25%">
 
-## 📖 Table of Contents
+## Table of Contents
 
-1. [Background](#-background)
-2. [Introduction](#-introduction)
-3. [Getting Started](#️-getting-started)
+1. [Background](#background)
+2. [Introduction](#introduction)
+3. [Getting Started](#getting-started)
     - [PCB Assembly](#pcb-assembly)
     - [Robot Code](#robot-code)
       - [Setup Steps](#setup-steps)
@@ -16,23 +16,23 @@
     - [Client Library](#client-library)
       - [Installation](#installation)
 4. [Acknowledgements](#acknowledgements)
-5. [Known Limitations](#️-known-limitations)
+5. [Known Limitations](#known-limitations)
 6. [Why DickerBot?](#why-dickerbot)
-7. [Contributing](#-contributing)
+7. [Contributing](#contributing)
 
-## 📚 Background
+## Background
 
 DickerBot was born out of my love for robotics and a desire to make learning sensor integration more accessible. I noticed that most approaches required diving deep into complex systems like ROS or low-level embedded C — which, while powerful, could be overwhelming for beginners just trying to understand the basics.
 
 At the time, I was heavily using the **ESP32** and was consistently impressed by how much you could do with such a cheap and small chip. I saw an opportunity: create a small robot with minimal hardware complexity, but powerful enough to teach core robotics concepts using **Python** and **WebSockets**.
 
-## 💡 Introduction
+## Introduction
 
 **DickerBot** is a simple robot car built around the ESP32 that sends real-time data (IMU, distance sensor, and camera) to a host machine. The host runs a Python WebSocket server that receives this data and sends control commands back. The focus is on **learning** how to work with sensor data in a higher-level environment without needing to deep-dive into embedded code or install large frameworks.
 
 The inspiration for the robot’s name and initial design came from my professor, **Dr. Dickerson**, whose Cyber-Physical Systems class used similar hardware — but with a deeper focus on embedded systems and C. DickerBot aims to be a *higher-level complement* to that approach.
 
-## ⚙️ Getting Started
+## Getting Started
 
 ### PCB Assembly
 
@@ -105,7 +105,7 @@ Refer to the demo video below for a step-by-step guide:
 ## Acknowledgements
 This project would not have taken shape without the influence of [**Dr. Dickerson**](https://www.engineering.pitt.edu/people/faculty/samuel-dickerson/), whose teachings and guidance were instrumental in shaping the ideas behind DickerBot.
 
-## ⚠️ Known Limitations
+## Known Limitations
 
 - Camera frame rate is currently low (~10 FPS over WebSocket)
 
@@ -113,6 +113,6 @@ This project would not have taken shape without the influence of [**Dr. Dickerso
 
 This is a platform for learning, not performance. The goal is to provide a **friendly, hackable entry point** into robotics using affordable hardware and intuitive Python code — and hopefully inspire others the same way this project inspired me.
 
-## 🤝 Contributing
+## Contributing
 
 DickerBot is an open-source project, and contributions are welcome! Whether it's reporting bugs, suggesting new features, or submitting pull requests, your input is highly valued. Feel free to open an issue or contribute directly by creating a pull request. Let's build and improve DickerBot together!
