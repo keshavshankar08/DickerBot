@@ -3,6 +3,23 @@
 
 <img src="./images/DickerBotLogo.png" alt="DickerBot Logo" width="25%">
 
+## 📖 Table of Contents
+
+1. [Background](#-background)
+2. [Introduction](#-introduction)
+3. [Getting Started](#️-getting-started)
+    - [PCB Assembly](#pcb-assembly)
+    - [Robot Code](#robot-code)
+      - [Setup Steps](#setup-steps)
+    - [Host Application](#host-application)
+      - [UI Overview](#ui-overview)
+    - [Client Library](#client-library)
+      - [Installation](#installation)
+4. [Acknowledgements](#acknowledgements)
+5. [Known Limitations](#️-known-limitations)
+6. [Why DickerBot?](#why-dickerbot)
+7. [Contributing](#-contributing)
+
 ## 📚 Background
 
 DickerBot was born out of my love for robotics and a desire to make learning sensor integration more accessible. I noticed that most approaches required diving deep into complex systems like ROS or low-level embedded C — which, while powerful, could be overwhelming for beginners just trying to understand the basics.
