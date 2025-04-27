@@ -115,26 +115,28 @@ class DickerBotClient:
 
     '''
     Sends control data to the websocket server.
-    :param motor: The motor to control.
-    :param speed: The speed to set.
-    :param direction: The direction to set.
+    :param left_wheel_speed: Speed of the left wheel.
+    :param left_wheel_direction: Direction of the left wheel
+    :param right_wheel_speed: Speed of the right wheel.
+    :param right_wheel_direction: Direction of the right wheel
     :return: None
     '''
-    async def _send_control_data(self, motor, speed, direction):
+    async def _send_control_data(self, left_wheel_speed, left_wheel_direction, right_wheel_speed, right_wheel_direction):
         if self.ws and self.running:
-            message = f"CD,{motor},{speed},{direction};"
+            message = f"CD,{left_wheel_speed},{left_wheel_direction},{right_wheel_speed},{right_wheel_direction};"
             await self.ws.send(message)
 
     '''
     Sets control data for the specified motor.
-    :param motor: The motor to control.
-    :param speed: The speed to set.
-    :param direction: The direction to set.
+    :param left_wheel_speed: Speed of the left wheel.
+    :param left_wheel_direction: Direction of the left wheel
+    :param right_wheel_speed: Speed of the right wheel.
+    :param right_wheel_direction: Direction of the right wheel
     :return: None
     '''
-    def set_control_data(self, motor, speed, direction):
+    def set_control_data(self, left_wheel_speed, left_wheel_direction, right_wheel_speed, right_wheel_direction):
         if self.ws and self.running:
-            asyncio.run(self._send_control_data(motor, speed, direction))
+            asyncio.run(self._send_control_data(left_wheel_speed, left_wheel_direction, right_wheel_speed, right_wheel_direction))
 
     '''
     Disconnects from the websocket server.

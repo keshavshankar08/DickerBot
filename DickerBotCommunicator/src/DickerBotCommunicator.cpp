@@ -138,7 +138,7 @@ void DickerBotCommunicator::SendCameraDataToSocket() {
 }
 
 void DickerBotCommunicator::SendControlDataToController() {
-    communicatorSerial.printf("CD,%d,%d,%d;", controlBuffer.wheel, controlBuffer.speed, controlBuffer.direction);
+    communicatorSerial.printf("CD,%d,%d,%d,%d;", controlBuffer.left_wheel_speed, controlBuffer.left_wheel_direction, controlBuffer.right_wheel_speed, controlBuffer.right_wheel_direction);
 }
 
 bool DickerBotCommunicator::GetConnectionStatus() { 
@@ -244,14 +244,10 @@ void DickerBotCommunicator::OnWebSocketEvent(WStype_t type, uint8_t *payload, si
         case WStype_DISCONNECTED:
             connected_to_socket = false;
 
-            controlBuffer.wheel = 0;
-            controlBuffer.speed = 0;
-            controlBuffer.direction = 0;
-            SendControlDataToController();
-
-            controlBuffer.wheel = 1;
-            controlBuffer.speed = 0;
-            controlBuffer.direction = 0;
+            controlBuffer.left_wheel_speed = 0;
+            controlBuffer.left_wheel_direction = 0;
+            controlBuffer.right_wheel_speed = 0;
+            controlBuffer.right_wheel_direction = 0;
             SendControlDataToController();
 
             SequenceLEDIndicator(2);
@@ -259,17 +255,17 @@ void DickerBotCommunicator::OnWebSocketEvent(WStype_t type, uint8_t *payload, si
             break;
 
         case WStype_TEXT:
-            
-        if (payload[0] == 'C' && payload[1] == 'D' && payload[2] == ',') {
-            int motor, speed, direction;
-            if (sscanf((char*)payload + 3, "%d,%d,%d", &motor, &speed, &direction) == 3) {
-                controlBuffer.wheel = motor;
-                controlBuffer.speed = speed;
-                controlBuffer.direction = direction;
-                SendControlDataToController();
-            } 
-        }
-        break;
+            if (payload[0] == 'C' && payload[1] == 'D' && payload[2] == ',') {
+                int left_wheel_speed, left_wheel_direction, right_wheel_speed, right_wheel_direction;
+                if (sscanf((char*)payload + 3, "%d,%d,%d,%d", &left_wheel_speed, &left_wheel_direction, &right_wheel_speed, &right_wheel_direction) == 4) {
+                    controlBuffer.left_wheel_speed = left_wheel_speed;
+                    controlBuffer.left_wheel_direction = left_wheel_direction;
+                    controlBuffer.right_wheel_speed = right_wheel_speed;
+                    controlBuffer.right_wheel_direction = right_wheel_direction;
+                    SendControlDataToController();
+                } 
+            }
+            break;
 
         default:
             break;

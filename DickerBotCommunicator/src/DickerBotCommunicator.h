@@ -24,9 +24,10 @@ struct SensorData {
 };
 
 struct ControlData {
-    int wheel = 999;  // 0 = left, 1 = right
-    int speed = 999;  // 0-255
-    int direction = 999;  // 0 = neutral, 1 = forward, 2 = backward
+    int left_wheel_speed = 999;  // 0-255
+    int left_wheel_direction = 999;  // 0 = neutral, 1 = forward, 2 = backward
+    int right_wheel_speed = 999;  // 0-255
+    int right_wheel_direction = 999;  // 0 = neutral, 1 = forward, 2 = backward
 };
 
 

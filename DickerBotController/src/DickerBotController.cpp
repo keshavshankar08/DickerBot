@@ -164,7 +164,7 @@ void DickerBotController::ReceiveDataFromCommunicator() {
     if (controllerSerial.available()) {
         String data = controllerSerial.readStringUntil(';');
         if (data.length() == 0) return;
-
+        
         if (data.startsWith("CD,")) {
             HandleControlDataFromCommunicator(data);
         } 
@@ -176,32 +176,28 @@ void DickerBotController::ReceiveDataFromCommunicator() {
 
 void DickerBotController::HandleControlDataFromCommunicator(String data) {
     data = data.substring(3);
-    int motor, speed, direction;
-    int numValues = sscanf(data.c_str(), "%d,%d,%d", &motor, &speed, &direction);
-    if (numValues == 3) {
-        if (motor == 0) {
-            SetLeftWheelSpeed(speed);
-            if (direction == 0) {
-                SetLeftWheelNeutral();
-            } 
-            else if (direction == 1) {
-                SetLeftWheelForward();
-            } 
-            else if (direction == 2) {
-                SetLeftWheelBackward();
-            }
+    int left_wheel_speed, left_wheel_direction, right_wheel_speed, right_wheel_direction;
+    int numValues = sscanf(data.c_str(), "%d,%d,%d,%d", &left_wheel_speed, &left_wheel_direction, &right_wheel_speed, &right_wheel_direction);
+    if (numValues == 4) {
+        SetLeftWheelSpeed(left_wheel_speed);
+        if (left_wheel_direction == 0) {
+            SetLeftWheelNeutral();
         } 
-        else if (motor == 1) {
-            SetRightWheelSpeed(speed);
-            if (direction == 0) {
-                SetRightWheelNeutral();
-            }
-            else if (direction == 1) {
-                SetRightWheelForward();
-            }
-            else if (direction == 2) {
-                SetRightWheelBackward();
-            }
+        else if (left_wheel_direction == 1) {
+            SetLeftWheelForward();
+        } 
+        else if (left_wheel_direction == 2) {
+            SetLeftWheelBackward();
+        }
+        SetRightWheelSpeed(right_wheel_speed);
+        if (right_wheel_direction == 0) {
+            SetRightWheelNeutral();
+        }
+        else if (right_wheel_direction == 1) {
+            SetRightWheelForward();
+        }
+        else if (right_wheel_direction == 2) {
+            SetRightWheelBackward();
         }
     }
 }

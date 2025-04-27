@@ -17,7 +17,7 @@ An example of how the library should be used can be found in [examples/Communica
 |--------|---------------|------------------------------------------|
 | WD     | Wifi Data     | WD,ssid,password,ip,port;               |
 | RD     | Robot Data    | RD,mac_address;                         |
-| CD     | Control Data  | CD,motor,speed,direction;               |
+| CD     | Control Data  | CD,left_wheel_speed,left_wheel_direction,right_wheel_speed,right_wheel_direction;               |
 | SD     | Sensor Data   | SD,ax,ay,az,gx,gy,gz,t,dL,dF,dR,dB;     |
 | ID     | Image Data    | ID,byte64;                          |
 
@@ -51,9 +51,10 @@ An example of how the library should be used can be found in [examples/Communica
 
 | Field  | Type   | Default Value | Description          |
 |-------------|--------|---------------|----------------------------|
-| **wheel**   | int    | 999           | 0 = left, 1 = right        |
-| **speed**   | int    | 999           | Speed (0-255)              |
-| **direction** | int  | 999           | 0 = neutral, 1 = forward, 2 = backward |
+| **left_wheel_speed**   | int    | 999           | Speed (0-255)              |
+| **left_wheel_direction** | int  | 999           | 0 = neutral, 1 = forward, 2 = backward |
+| **right_wheel_speed**   | int    | 999           | Speed (0-255)              |
+| **right_wheel_direction** | int  | 999           | 0 = neutral, 1 = forward, 2 = backward |
 
 ## DickerBot Project
 
