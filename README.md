@@ -1,4 +1,4 @@
-# DickerBot 🤖🚗  
+# DickerBot
 *A lightweight ESP32-powered robotics platform for learning sensor integration and control through Python.*
 
 <img src="./images/DickerBotLogo.png" alt="DickerBot Logo" width="25%">

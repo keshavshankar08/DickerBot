@@ -11,10 +11,21 @@ import os
 
 os.environ["QT_PLUGIN_PATH"] = os.path.join(os.path.dirname(PyQt5.__file__), "Qt", "plugins")
 
+def resource_path(relative_path):
+    """Get the absolute path to a resource in a bundled app."""
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 class DickerBotHost(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("Host.ui", self)
+
+        ui_path = resource_path("Host.ui")
+        uic.loadUi(ui_path, self)
         
         self.device_manager_refresh_button.clicked.connect(self.refresh_clicked) # refresh button bind
         self.device_manager_sync_button.clicked.connect(self.sync_clicked) # sync button bind
@@ -58,13 +69,16 @@ class DickerBotHost(QtWidgets.QMainWindow):
                 self.device_manager_port_drop_down.addItem(port.device)
 
     '''
-    Executes handshake with robot to share wif, socket, and robot information.
+    Executes handshake with robot to share wifi, socket, and robot information.
     :return: None
     '''
     def sync_clicked(self):
         device_port = self.device_manager_port_drop_down.currentText()
         wifi_ssid = self.device_manager_ssid_data.text()
         wifi_password = self.device_manager_password_data.text()
+
+        self.device_manager_ssid_data.clear()
+        self.device_manager_password_data.clear()
 
         ser = None
         try:

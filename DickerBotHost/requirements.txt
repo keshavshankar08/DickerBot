@@ -1,0 +1,4 @@
+pyinstaller
+pyserial
+PyQt5
+websockets

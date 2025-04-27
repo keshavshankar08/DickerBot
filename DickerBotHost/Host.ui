@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DickerBotManager</class>
- <widget class="QMainWindow" name="DickerBotManager">
+ <class>DickerBotHost</class>
+ <widget class="QMainWindow" name="DickerBotHost">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string notr="true">DickerBot Manager</string>
+   <string notr="true">DickerBotHost</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="device_manager">
