@@ -52,11 +52,10 @@ Format: `96x96 grayscale`
 
 ### Sending control data
 ```python
-bot.set_control_data(wheel, speed, direction)
+bot.set_control_data(left_wheel_speed, left_wheel_direction, right_wheel_speed, right_wheel_direction)
 ```
 | **Parameter** | **Description** |
 |---------------|-----------------|
-| wheel | `0` = left; `1` = right; `999` = error |
 | speed | `0`-`255`; `999` = error |
 | direction | `0` = neutral; `1` = forward; `2` = backward; `999` = error |
 
@@ -67,7 +66,7 @@ bot.disconnect()
 
 ## Example Teleop
 ```python
-# TODO: Create a program to do keyboard basic teleop using w,a,s,d while showing realtime video stream and IMU/proximity data.
+# TODO: Create a program to do basic keyboard teleop using w,a,s,d while showing realtime video stream and IMU/proximity data.
 ```
 
 ## DickerBot Project
