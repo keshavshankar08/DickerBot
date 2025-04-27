@@ -64,10 +64,13 @@ bot.set_control_data(left_wheel_speed, left_wheel_direction, right_wheel_speed, 
 bot.disconnect()
 ```
 
-## Example Teleop
-```python
-# TODO: Create a program to do basic keyboard teleop using w,a,s,d while showing realtime video stream and IMU/proximity data.
-```
+See the video below for a step-by-step tutorial on using the client library with the robot.
+
+[![DickerBotClilent Install and Demo](https://img.youtube.com/vi/5Awan-dBAVE/0.jpg)](https://www.youtube.com/watch?v=5Awan-dBAVE)
+
+## Examples
+
+Examples of how the library can be used can be found in [examples/](examples/). You should not edit this code unless you read the documentation thoroughly, which is located at [src/dickerbotclient/client.py](src/dickerbotclient/client.py).
 
 ## DickerBot Project
 

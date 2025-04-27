@@ -4,7 +4,11 @@ DickerBotController is the embedded library for the controller module of the Dic
 
 ## Installation
 
-You can install the latest release of DickerBotController from the Arduino library manager within the Arduino IDE or [here](https://docs.arduino.cc/libraries/).
+You can install the latest release of DickerBotController from [here](https://github.com/keshavshankar08/DickerBot/releases). 
+
+See the video below for a step-by-step tutorial on updating the software for the DickerBotController module.
+
+[![DickerBotController Software Update Tutorial](https://img.youtube.com/vi/m8kM3JT4JY0/0.jpg)](https://www.youtube.com/watch?v=m8kM3JT4JY0)
 
 ## Usage
 
