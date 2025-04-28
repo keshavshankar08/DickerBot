@@ -43,9 +43,19 @@ See the video below for some tips on the PCB assembly process.
 
 [![DickerBot PCB Assembly Tips](https://img.youtube.com/vi/EeNSNBCDw6I/0.jpg)](https://www.youtube.com/watch?v=EeNSNBCDw6I)
 
+You can download the latest release of the PCB from [here](https://github.com/keshavshankar08/DickerBot/releases). 
+
+For images of the PCB and schmeatics, please refer to [images/](./images/).
+
 ### Enclosure Assembly Tips
 
-(coming soon)
+See the video below for some tips on the enclosure assembly process.
+
+(video coming soon!)
+
+You can download the latest release of the enclosure from [here](https://github.com/keshavshankar08/DickerBot/releases). 
+
+For images of the enclosure, please refer to [images/](./images/).
 
 ### Robot Code (DickerBotController & DickerBotCommunicator)
 
