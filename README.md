@@ -2,21 +2,24 @@
 *A lightweight ESP32-powered robotics platform for learning sensor integration and control through Python.*
 
 <img src="./images/DickerBotLogo.png" alt="DickerBot Logo" width="25%">
+<img src="./images/DickerBotFront.jpg" alt="DickerBot Front" width="25%">
 
 ## Table of Contents
 
 1. [Background](#background)
 2. [Introduction](#introduction)
 3. [Getting Started](#getting-started)
+    - [Demo](#demo)
     - [PCB Assembly Tips](#pcb-assembly-tips)
     - [Enclosure Assembly Tips](#enclosure-assembly-tips)
     - [Robot Code (DickerBotController & DickerBotCommunicator)](#robot-code-dickerbotcontroller--dickerbotcommunicator)
     - [Host Application (DickerBotHost)](#host-application-dickerbothost)
     - [Client Library (DickerBotClient)](#client-library-dickerbotclient)
-4. [Acknowledgements](#acknowledgements)
-5. [Known Limitations](#known-limitations)
-6. [Why DickerBot?](#why-dickerbot)
-7. [Contributing](#contributing)
+4. [Known Limitations](#known-limitations)
+5. [Why DickerBot?](#why-dickerbot)
+    - [Cost](#cost)
+6. [Contributing](#contributing)
+7. [Acknowledgements](#acknowledgements)
 
 ## Background
 
@@ -31,6 +34,13 @@ At the time, I was heavily using the **ESP32** and was consistently impressed by
 The inspiration for the robot’s name and initial design came from my professor, **Dr. Dickerson**, whose Cyber-Physical Systems class used similar hardware — but with a deeper focus on embedded systems and C. DickerBot aims to be *higher-level* to that approach.
 
 ## Getting Started
+
+### Demo
+
+Below is a basic demonstration of the DickerBot showcasing movement and sensor polling in real-time.
+
+[![DickerBot Demo](https://img.youtube.com/vi/xPc6H8kpWcc/0.jpg)](https://www.youtube.com/watch?v=xPc6H8kpWcc)
+
 
 ### PCB Assembly Tips
 
@@ -49,13 +59,14 @@ For images of the PCB and schmeatics, please refer to [images/](./images/).
 
 ### Enclosure Assembly Tips
 
-See the video below for some tips on the enclosure assembly process.
+The enclosure is very basic, using press fit inserts to joint all parts. The parts can be assembled as seen in the image below:
 
-(video coming soon!)
+<img src="./images/DickerBotEnclosure.png" alt="DickerBot Enclosure" width="25%">
+
 
 You can download the latest release of the enclosure from [here](https://github.com/keshavshankar08/DickerBot/releases). 
 
-For images of the enclosure, please refer to [images/](./images/).
+For images of the final assembled robot using the enclosure and PCB, please refer to [images/](./images/).
 
 ### Robot Code (DickerBotController & DickerBotCommunicator)
 
@@ -78,9 +89,6 @@ This client library provides an interface for interacting with a socket-based sy
 
 For detailed documentation and demo videos, please refer to the [DickerBotClient README](./DickerBotClient/README.md).
 
-## Acknowledgements
-This project would not have taken shape without the influence of [**Dr. Dickerson**](https://www.engineering.pitt.edu/people/faculty/samuel-dickerson/), whose teachings and guidance were instrumental in shaping the ideas behind DickerBot.
-
 ## Known Limitations
 
 - Camera: 
@@ -94,6 +102,18 @@ This project would not have taken shape without the influence of [**Dr. Dickerso
 
 This is a platform for learning, not performance. The goal is to provide a **friendly, hackable entry point** into robotics using affordable hardware and intuitive Python code, hopefully inspiring others the same way this project inspired me.
 
+### Cost
+
+| Category | Cost       |
+|--------|---------------|
+| Componenets | $27.5 | 
+| PCB | $10 |
+| Enclosure | $3 |
+
 ## Contributing
 
 DickerBot is an open-source project, and contributions are welcome! Whether it's reporting bugs, suggesting new features, or submitting pull requests for code updates, your input is highly valued. Feel free to open an issue or contribute directly by creating a pull request. Let's build and improve DickerBot together!
+
+## Acknowledgements
+
+This project would not have taken shape without the influence of [**Dr. Dickerson**](https://www.engineering.pitt.edu/people/faculty/samuel-dickerson/), whose teachings and guidance were instrumental in shaping the ideas behind DickerBot.
